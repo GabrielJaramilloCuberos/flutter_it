@@ -50,25 +50,7 @@ class StartScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 8),
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: "ejemplo@correo.com",
-                            prefixIcon: Icon(Icons.email_outlined, color: Color(0xFF596884)),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide(color: Color(0xFF596884), width: 2),
-                            ),
-                            contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-                          ),
-                        ),
+                        EmailField(),
                       ],
                     ),
                     SizedBox(height: 20),
@@ -84,28 +66,11 @@ class StartScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 8),
-                        TextField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            hintText: "Tu contraseña",
-                            prefixIcon: Icon(Icons.lock_outline, color: Color(0xFF596884)),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide(color: Color(0xFF596884), width: 2),
-                            ),
-                            contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-                          ),
-                        ),
+                        PasswordField(),
                       ],
                     ),
+                    SizedBox(height: 16),
+                    RememberMeBox(),
                     SizedBox(height: 12),
                     LoginButton(buttonName: "Iniciar Sesión", buttonColor: Color(0xFF596884)),
                     SizedBox(height: 12),
@@ -117,6 +82,91 @@ class StartScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class RememberMeBox extends StatelessWidget {
+  const RememberMeBox({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Checkbox(
+          value: false,
+          onChanged: (value) {},
+          activeColor: Color(0xFF596884),
+        ),
+        Text(
+          "Recuérdame",
+          style: TextStyle(
+            color: Color(0xFF596884),
+            fontSize: 14,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class PasswordField extends StatelessWidget {
+  const PasswordField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+        hintText: "Tu contraseña",
+        prefixIcon: Icon(Icons.lock_outline, color: Color(0xFF596884)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Color(0xFF596884), width: 2),
+        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+      ),
+    );
+  }
+}
+
+class EmailField extends StatelessWidget {
+  const EmailField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        hintText: "ejemplo@correo.com",
+        prefixIcon: Icon(Icons.email_outlined, color: Color(0xFF596884)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Color(0xFF596884), width: 2),
+        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
       ),
     );
   }
