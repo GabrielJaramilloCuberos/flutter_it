@@ -43,7 +43,10 @@ class StartScreen extends StatelessWidget {
                       children: [
                         TopTextField(text: "Correo Electrónico"),
                         SizedBox(height: 8),
-                        EmailField(),
+                        CustomTextField(
+                          hintText: "ejemplo@correo.com",
+                          prefixIcon: Icons.email_outlined,
+                        ),
                       ],
                     ),
                     SizedBox(height: 20),
@@ -52,7 +55,11 @@ class StartScreen extends StatelessWidget {
                       children: [
                         TopTextField(text: "Contraseña"),
                         SizedBox(height: 8),
-                        PasswordField(),
+                        CustomTextField(
+                          hintText: "Tu contraseña",
+                          prefixIcon: Icons.lock_outline,
+                          obscureText: true,
+                        ),
                       ],
                     ),
                     SizedBox(height: 16),
@@ -118,48 +125,25 @@ class RememberMeBox extends StatelessWidget {
     );
   }
 }
-
-class PasswordField extends StatelessWidget {
-  const PasswordField({
+class CustomTextField extends StatelessWidget {
+  final String hintText;
+  final IconData prefixIcon;
+  final bool obscureText;
+  
+  const CustomTextField({
     super.key,
+    required this.hintText,
+    required this.prefixIcon,
+    this.obscureText = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText: true,
+      obscureText: obscureText,
       decoration: InputDecoration(
-        hintText: "Tu contraseña",
-        prefixIcon: Icon(Icons.lock_outline, color: Color(0xFF596884)),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Color(0xFF596884), width: 2),
-        ),
-        contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-      ),
-    );
-  }
-}
-
-class EmailField extends StatelessWidget {
-  const EmailField({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-        hintText: "ejemplo@correo.com",
-        prefixIcon: Icon(Icons.email_outlined, color: Color(0xFF596884)),
+        hintText: hintText,
+        prefixIcon: Icon(prefixIcon, color: Color(0xFF596884)),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(color: Color(0xFF596884), width: 1.5),
