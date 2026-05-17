@@ -41,14 +41,7 @@ class StartScreen extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Correo electrónico",
-                          style: TextStyle(
-                            color: Color(0xFF596884),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        TopTextField(text: "Correo Electrónico"),
                         SizedBox(height: 8),
                         EmailField(),
                       ],
@@ -57,14 +50,7 @@ class StartScreen extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Contraseña",
-                          style: TextStyle(
-                            color: Color(0xFF596884),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        TopTextField(text: "Contraseña"),
                         SizedBox(height: 8),
                         PasswordField(),
                       ],
@@ -82,6 +68,26 @@ class StartScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TopTextField extends StatelessWidget {
+  final String text;
+  const TopTextField({
+    super.key,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      this.text,
+      style: TextStyle(
+        color: Color(0xFF596884),
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
       ),
     );
   }
