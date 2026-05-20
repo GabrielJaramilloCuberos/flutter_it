@@ -105,7 +105,7 @@ class RegisterScreen extends StatelessWidget {
   }
 }
 
-// ── Nuevo componente solo para esta pantalla ──────────────────────────────────
+
 
 class RegisterTitle extends StatelessWidget {
   const RegisterTitle({super.key});

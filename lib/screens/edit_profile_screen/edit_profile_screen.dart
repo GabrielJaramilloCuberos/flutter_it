@@ -93,7 +93,6 @@ class EditProfileScreen extends StatelessWidget {
   }
 }
 
-// ── Nuevos componentes solo para esta pantalla ────────────────────────────────
 
 class EditProfileTitle extends StatelessWidget {
   const EditProfileTitle({super.key});
