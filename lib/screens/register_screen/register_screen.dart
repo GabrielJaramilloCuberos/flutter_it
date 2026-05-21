@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../start_screen/start_screen.dart'; // Reutiliza: TopTextField, CustomTextField, RememberMeBox, LoginButton
+import '../start_screen/start_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
