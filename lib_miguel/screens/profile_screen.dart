@@ -22,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
                   UserProfileIcon(),
                   SizedBox(height: 14),
                   Text(
-                    'Salomon Avila',
+                    'Mariana García',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    '@micho34',
+                    '@marianagarciarodriguez',
                     style: TextStyle(
                       fontSize: 17,
                       color: Color(0xFF566786),
@@ -53,11 +53,11 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(height: 18),
                   ReviewProductCard(
                     description:
-                        'La prueba para saber si las coordenadas estan pichas o no',
+                        'Me gusta el queso',
                   ),
                   SizedBox(height: 18),
                   ReviewProductCard(
-                    description: 'Segunda prueba de las ubicaciones',
+                    description: 'Me encanta el queso',
                   ),
                 ],
               ),

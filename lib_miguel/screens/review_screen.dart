@@ -244,7 +244,7 @@ class OpinionBox extends StatelessWidget {
       child: const Align(
         alignment: Alignment.topLeft,
         child: Text(
-          'buen quesito',
+          'Me gusta el queso',
           style: TextStyle(
             fontSize: 23,
             color: Colors.black87,

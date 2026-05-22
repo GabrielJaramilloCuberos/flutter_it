@@ -11,7 +11,7 @@ class ProductDetailScreen extends StatelessWidget {
         child: Stack(
           children: [
             SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(30, 22, 30, 115),
+              padding: const EdgeInsets.fromLTRB(30, 22, 30, 125),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
@@ -39,10 +39,15 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 28),
                   ActionCard(
-                    icon: Icons.edit,
-                    text: 'Comparar precios en tiendas',
-                  ),
-                  SizedBox(height: 34),
+  icon: Icons.edit,
+  text: 'Comparar precios en tiendas',
+),
+SizedBox(height: 12),
+ActionCard(
+  icon: Icons.map_outlined,
+  text: 'Ver ubicaciones de reseñas',
+),
+SizedBox(height: 28),
                   Text(
                     'Opiniones del producto',
                     style: TextStyle(
@@ -246,7 +251,7 @@ class ReviewCard extends StatelessWidget {
     const SizedBox(width: 16),
     const Expanded(
       child: Text(
-        'Salomon Avila\nUsuario verificado',
+        'Mariana García\nUsuario verificado',
         style: TextStyle(
           fontSize: 15,
           height: 1.4,
@@ -263,7 +268,7 @@ class ReviewCard extends StatelessWidget {
 ),
           const SizedBox(height: 20),
           const Text(
-            'buen quesito',
+            'Me gusta el queso',
             style: TextStyle(fontSize: 20),
           ),
           const Spacer(),
