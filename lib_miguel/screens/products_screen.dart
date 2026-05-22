@@ -54,25 +54,25 @@ class CatalogScreen extends StatelessWidget {
                   FilterButtons(),
                   SizedBox(height: 48),
                   ProductCard(
-                    image: '🧀',
-                    title: 'Queso campesino 250 g',
-                    description: 'Para desayuno, arepas y sándwiches.',
-                    reviews: '9 reseñas',
-                  ),
+  imagePath: 'assets/images/queso_campesino.png',
+  title: 'Queso campesino 250 g',
+  description: 'Para desayuno, arepas y sándwiches.',
+  reviews: '9 reseñas',
+),
                   SizedBox(height: 26),
                   ProductCard(
-                    image: '🫘',
-                    title: 'Lenteja 500 g',
-                    description: 'Fuente de proteína vegetal para sopas, guisos y ensaladas.',
-                    reviews: '2 reseñas',
-                  ),
+  imagePath: 'assets/images/lenteja.png',
+  title: 'Lenteja 500 g',
+  description: 'Fuente de proteína vegetal para sopas, guisos y ensaladas.',
+  reviews: '2 reseñas',
+),
                   SizedBox(height: 26),
                   ProductCard(
-                    image: '🥤',
-                    title: 'Yogurt bebible 200 ml',
-                    description: 'Bebida láctea práctica para onces, lonchera o snack.',
-                    reviews: '8 reseñas',
-                  ),
+  imagePath: 'assets/images/yogurt.png',
+  title: 'Yogurt bebible 200 ml',
+  description: 'Bebida láctea práctica para onces, lonchera o snack.',
+  reviews: '8 reseñas',
+),
                 ],
               ),
             ),
@@ -210,14 +210,14 @@ class FilterChipBox extends StatelessWidget {
 }
 
 class ProductCard extends StatelessWidget {
-  final String image;
+  final String imagePath;
   final String title;
   final String description;
   final String reviews;
 
   const ProductCard({
     super.key,
-    required this.image,
+    required this.imagePath,
     required this.title,
     required this.description,
     required this.reviews,
@@ -226,30 +226,40 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 118,
-      padding: const EdgeInsets.symmetric(horizontal: 18),
+      height: 132,
+      padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: const Color(0xFFF2F4F8).withOpacity(0.93),
-        borderRadius: BorderRadius.circular(25),
+        color: const Color(0xFFF2F4F8).withOpacity(0.96),
+        borderRadius: BorderRadius.circular(26),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.16),
-            blurRadius: 10,
-            offset: const Offset(0, 6),
+            color: Colors.black.withOpacity(0.15),
+            blurRadius: 14,
+            offset: const Offset(0, 7),
           ),
         ],
       ),
       child: Row(
         children: [
           Container(
-            width: 78,
-            height: 78,
-            alignment: Alignment.center,
+            width: 82,
+            height: 82,
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: const Color(0xFFDDE6F4),
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(20),
             ),
-            child: Text(image, style: const TextStyle(fontSize: 42)),
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.contain,
+              errorBuilder: (context, error, stackTrace) {
+                return const Icon(
+                  Icons.shopping_bag,
+                  size: 38,
+                  color: Color(0xFF566786),
+                );
+              },
+            ),
           ),
           const SizedBox(width: 18),
           Expanded(
@@ -262,36 +272,33 @@ class ProductCard extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w800,
                     color: Colors.black,
                   ),
                 ),
-                const SizedBox(height: 6),
+                const SizedBox(height: 7),
                 Text(
                   description,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                    fontSize: 12,
-                    height: 1.25,
+                    fontSize: 12.8,
+                    height: 1.28,
                     color: Color(0xFF333333),
                   ),
                 ),
                 const SizedBox(height: 8),
                 Row(
                   children: [
-                    const Icon(Icons.comment_outlined, size: 16),
-                    const SizedBox(width: 5),
+                    const Icon(Icons.comment_outlined, size: 17),
+                    const SizedBox(width: 6),
                     Text(
                       reviews,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Color(0xFF333333),
-                      ),
+                      style: const TextStyle(fontSize: 12.5),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),

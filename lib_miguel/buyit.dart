@@ -28,7 +28,7 @@ class MainApp extends StatelessWidget {
       // home: LoginScreen(),
       // home: RegisterScreen(),
       // home: CatalogScreen(),
-       home: ProductDetailScreen(),
+      // home: ProductDetailScreen(),
       // home: SettingsScreen(),
       // home: ProfileScreen(),
       // home: ReviewEditorScreen(),
